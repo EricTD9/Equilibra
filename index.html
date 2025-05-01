@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página para inferencia simple</title>
+</head>
+<body>
+    <!-- https://www.tensorflow.org/js/tutorials?hl=es-419 -->
+    <!-- https://cdnjs.com/libraries/tensorflow/4.5.0 -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.12.0/dist/tf.min.js"></script>
+
+    <!-- Creación de contenedor de imagen de entrada -->
+    <div id="container-input">
+        <img id="input_image" width="299" height="299">
+    </div>
+    <!-- Creación botones para subir y predicción-->    
+    <div id="container-button">
+		<div>	            
+			<input type="file" name="fileupload" accept="image/*" onchange="display(event)">
+			<p class="path">La URL de esta imagen es:</p>
+		</div>	
+		<div>			
+			<input type="button" name="predict" onclick="predict_animal()" value="Predicción">
+		</div>
+	</div>
+
+   <!-- Despliegue de clases y salida detectada-->   
+    <div id="container-output">
+		<div id="etiquetas de animales">
+			<ul>
+				<li>Guacamaya</li>
+                <li>Perezoso</li>
+				<li>Luciernaga</li>
+				<li>Mariposa</li>
+				<li>Ajololte</li>
+			</ul>
+		</div>		
+		<div id="output_text"></div>
+	</div>
+
+    <script src="./mis-scripts.js"></script>
+
+</body>
+</html>
