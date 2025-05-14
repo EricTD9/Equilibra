@@ -95,13 +95,8 @@
   <!-- Contenedor de imagen de entrada -->
   <div id="container-input">
     <p>Imagen de entrada:</p>
+    <video id="video" width="224" height="224" autoplay playsinline style="display:none;"></video>
     <img id="input_image" width="224" height="224" />
-  </div>
-
-  <!-- Contenedor de botones -->
-  <div id="container-button">
-    <input type="file" name="fileupload" accept="image/*" onchange="display(event)" /><br>
-    <input type="button" name="predict" onclick="predict_animal()" value="Predicción" />
   </div>
 
   <!-- Contenedor de etiquetas y resultado -->
