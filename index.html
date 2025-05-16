@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Página para inferencia simple</title>
+  <title>Página para inferencia de emociones</title>
 
   <!-- TensorFlow.js -->
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.10.0/dist/tf.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.12.0/dist/tf.min.js"></script>
 
   <!-- Estilos CSS -->
   <style>
@@ -69,12 +69,12 @@
       color: #555;
     }
 
-    #etiquetas-de-animales ul {
+    #etiquetas-de-emociones ul {
       list-style-type: none;
       padding: 0;
     }
 
-    #etiquetas-de-animales li {
+    #etiquetas-de-emociones li {
       padding: 5px 0;
       font-weight: bold;
       color: #333;
@@ -90,19 +90,19 @@
 </head>
 <body>
 
-  <h1>Clasificador de Animales</h1>
+  <h1>Clasificador de Emociones</h1>
 
   <!-- Contenedor de imagen de entrada -->
   <div id="container-input">
     <p>Imagen de entrada:</p>
-    <video id="video" width="224" height="224" autoplay playsinline style="display:none;"></video>
-    <img id="input_image" width="224" height="224" />
+    <video id="video" width="299" height="299" autoplay playsinline style="display:none;"></video>
+    <img id="input_image" width="299" height="299" />
   </div>
 
   <!-- Contenedor de etiquetas y resultado -->
   <div id="container-output">
-    <div id="etiquetas-de-animales">
-      <p>Clases disponibles:</p>
+    <div id="etiquetas-de-emociones">
+      <p>Emociones disponibles:</p>
       <ul>
         <li>1 Enojado</li>
         <li>2 Asustado</li>
