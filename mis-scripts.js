@@ -38,8 +38,10 @@ window.onload = async function () {
 			img.style.display = 'block';
 			video.style.display = 'none';
 
-			// Realizar la predicción de emoción
-			predict_emotion();
+			// Esperar a que la imagen se cargue antes de predecir
+			img.onload = () => {
+				predict_emotion();
+			};
 		}, 5000);
 	} catch (err) {
 		output.innerHTML = "No se pudo acceder a la cámara.";
@@ -54,11 +56,11 @@ async function predict_emotion() {
 	const start = performance.now();
 	
 	let imageproc = tf.browser.fromPixels(input)
-    .resizeNearestNeighbor([299, 299]) // Cambia el tamaño si tu modelo lo requiere
-    .toFloat()
-    .div(127.5)
-    .sub(1.0)
-    .expandDims(0);
+		.resizeNearestNeighbor([299, 299])
+		.toFloat()
+		.div(127.5)
+		.sub(1.0)
+		.expandDims(0);
 	console.log("Finalización del preprocesamiento de la imagen");
 
 	const model = await tf.loadLayersModel('./tensorflowjs-model/model.json');

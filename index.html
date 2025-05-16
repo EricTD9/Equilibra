@@ -7,7 +7,7 @@
   <title>Página para inferencia de emociones</title>
 
   <!-- TensorFlow.js -->
-   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.12.0/dist/tf.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.10.0/dist/tf.min.js"></script>
 
   <!-- Estilos CSS -->
   <style>
@@ -116,6 +116,11 @@
 
   <!-- Script principal -->
   <script src="./mis-scripts.js"></script>
+  <script>
+    // Suponiendo que 'input' es el elemento de imagen que estás usando
+    const input = document.getElementById('input_image');
+    console.log("Image src:", input.src);
+  </script>
 
 </body>
 </html>
