@@ -7,7 +7,11 @@
   <title>Página para inferencia de emociones</title>
 
   <!-- TensorFlow.js -->
-   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.10.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.10.0/dist/tf.min.js"></script>
+  <!-- Face Detection -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/face-landmarks-detection@1.0.2/dist/face-landmarks-detection.min.js"></script>
+  <!-- BlazeFace -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/blazeface@0.0.7/dist/blazeface.min.js"></script>
 
   <!-- Estilos CSS -->
   <style>
@@ -27,7 +31,8 @@
 
     #container-input,
     #container-button,
-    #container-output {
+    #container-output,
+    #container-cropped {
       background-color: #fff;
       padding: 20px;
       margin: 15px 0;
@@ -38,7 +43,8 @@
       text-align: center;
     }
 
-    img#input_image {
+    img#input_image,
+    img#cropped_face {
       border: 2px dashed #ccc;
       border-radius: 10px;
       margin-top: 10px;
@@ -98,6 +104,12 @@
     <video id="video" width="299" height="299" autoplay playsinline style="display:none;"></video>
     <img id="input_image" width="299" height="299" />
     <p id="countdown" style="font-size:2em; color:#007bff; margin:10px 0;"></p>
+  </div>
+
+  <!-- Contenedor de imagen recortada -->
+  <div id="container-cropped" style="display: none;">
+    <p>Rostro detectado:</p>
+    <img id="cropped_face" width="299" height="299" />
   </div>
 
   <!-- Contenedor de etiquetas y resultado -->
