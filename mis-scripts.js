@@ -63,7 +63,7 @@ async function predict_emotion() {
 	// Si no se detecta un rostro, usar la imagen completa
 	let imageproc;
 	const croppedContainer = document.getElementById("container-cropped");
-	const croppedImage = document.getElementById("cropped_face");
+	const croppedImage = document.getElementById("cropped_image");
 	
 	if (face) {
 		// Crear un canvas para el rostro
